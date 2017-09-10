@@ -80,8 +80,8 @@ if (argv.v || argv.version) {
     files.forEach(function(file) {
       if (fs.existsSync(file)) {
         if (fs.lstatSync(file).isDirectory()) {
-          images = images.concat(glob.sync(file + (argv.r || argv.recursive ? '/**' : '') + '/*.+(png|jpg|jpeg|PNG|JPG|JPEG)'));
-        } else if (minimatch(file, '*.+(png|jpg|jpeg|PNG|JPG|JPEG)', {
+          images = images.concat(glob.sync(file + (argv.r || argv.recursive ? '/**' : '') + '/*.+(png|PNG)'));
+        } else if (minimatch(file, '*.+(png|PNG)', {
             matchBase: true
           })) {
           images.push(file);
